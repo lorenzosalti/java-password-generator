@@ -9,9 +9,9 @@ public class PasswordGenerator {
     String firstName;
     String lastName;
     String favouriteColour;
-    byte birthDay;
-    byte birthMonth;
-    short birthYear;
+    int birthDay;
+    int birthMonth;
+    int birthYear;
 
     System.out.println("Inserire il proprio nome");
     firstName = in.nextLine();
@@ -23,14 +23,18 @@ public class PasswordGenerator {
     favouriteColour = in.nextLine();
 
     System.out.println("Inserire il proprio giorno di nascita");
-    birthDay = in.nextByte();
+    birthDay = in.nextInt();
 
     System.out.println("Inserire il proprio mese di nascita");
-    birthMonth = in.nextByte();
+    birthMonth = in.nextInt();
 
     System.out.println("Inserire il proprio anno di nascita");
-    birthYear = in.nextShort();
+    birthYear = in.nextInt();
 
-    String resultingPassword;
+    int birthSum = birthDay + birthMonth + birthYear;
+
+    String resultingPassword = firstName + "-" + lastName + "-" + favouriteColour + "-" + birthSum;
+
+    System.out.println("La password generata è: " + resultingPassword);
   }
 }
